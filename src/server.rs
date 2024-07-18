@@ -55,7 +55,11 @@ impl authenticate::Server for HelloWorldImpl {
         println!("user {}", _user_name);
         println!("password {}", _pass_word);
         // do some authentication
-        result.get().init_result().set_description("User authenticated successfully");
+        let mut out = result.get().init_result();
+        out.set_description("User authenticated successfully");
+        out.set_message("Message");
+        out.set_result("Okay");
+        out.set_code(45);
         Promise::ok(())
     }
 }
