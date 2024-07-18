@@ -1,0 +1,22 @@
+[package]
+
+name = "hello-world"
+version = "0.0.0"
+authors = [ "Mostafa Sedaghat Joo <mostafa.sedaghat@gmail.com>"  ]
+edition = "2021"
+
+build = "build.rs"
+
+[[bin]]
+name = "hello-world"
+path = "src/main.rs"
+
+[build-dependencies]
+capnpc = "*"
+
+[dependencies]
+capnp = "*"
+capnp-rpc = "0.19.2"
+futures = "0.3.0"
+tokio = { version = "1.0.0", features = ["net", "rt", "macros"]}
+tokio-util = { version = "0.7.4", features = ["compat"] }
